@@ -7,8 +7,9 @@ import * as ROUTES from "./constants/routes";
 export const App = () => {
   return (
     <>
+    <div className="header">
       <Router>
-        <nav>
+        <nav className="nav_bar">
           <ul>
             <li>
               <Link to={ROUTES.HOME}>Home</Link>
@@ -34,6 +35,7 @@ export const App = () => {
           </Route>
         </Switch>
       </Router>
+    </div>
     </>
   );
 };
