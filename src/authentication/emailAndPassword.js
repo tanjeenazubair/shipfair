@@ -24,5 +24,17 @@ const registerWithEmailAndPassword = async (name, email, password) => {
         alert(error.message);
     }
 };
+const sendPasswordResetEmail = async (email) => {
+    try {
+        await auth.sendPasswordResetEmail(email);
+        alert('Password reset link sent!');
+    } catch (error) {
+        alert(error.message);
+    }
+};
 
-export { signInWithEmailAndPassword, registerWithEmailAndPassword}
+const logOut = () => {
+    auth.signOut();
+};
+
+export { signInWithEmailAndPassword, registerWithEmailAndPassword, sendPasswordResetEmail, logOut };
