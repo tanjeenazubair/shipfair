@@ -25,24 +25,18 @@ $white: #fff;
     box-shadow: rgba(101, 71, 71, 0.15) 0 3px 9px 0;
   }
   .login__textBox {
-    // padding: 10px;
+    padding: 10px;
     font-size: 18px;
     margin-bottom: 10px;
-    // border-radius: 42px;
-  
-      max-width: 380px;
-      margin: 10px 0;
-      height: 55px;
-      border-radius: 10px;
-      // display: grid;
-      // grid-template-columns: 15% 85%;
-      padding: 0px 1.5rem;
-      position: relative;
-      border: none;
-      outline: none;
-      &:hover {
-        background-color: gray;
-      }
+    max-width: 380px;
+    margin: 10px 0;
+    height: 55px;
+    /* border-radius: 10px; */
+    padding: 0px 1.5rem;
+    position: relative;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid gray;
 
 
   }
@@ -75,13 +69,9 @@ $white: #fff;
     position: relative;
     background-color: rgb(7, 15, 44);
 
-    // margin-top: 2.4rem;
-    // margin-left: 543px;
-    // position: absolute;
     &:hover {
       box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
       transform: translateY(-2px);
-      // background-color: rgba(60, 64, 67, 0.08);
       background-color: rgb(7, 15, 44);
 
     }
@@ -131,7 +121,7 @@ $white: #fff;
   .forget__password {
     text-decoration: none;
     color: black;
-    font-weight: 700;
+    font-weight: 500;
     &:hover {
       color: red;      // background-color: rgba(60, 64, 67, 0.08);
 
