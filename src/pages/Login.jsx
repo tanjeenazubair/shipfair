@@ -1,10 +1,61 @@
-import React from 'react'
-import "../stylesheets/Login.scss"
+/* eslint-disable no-unused-vars */
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useState, useEffect } from "react";
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { Link, useHistory } from "react-router-dom";
+import { auth } from '../libraries/firebase';
+import { signInWithEmailAndPassword, signInWithGoogle } from "../authentication";
+import '../stylesheets/Login.scss';
 
 export const Login = () => {
+    
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [user, loading, error] = useAuthState(auth);
+    const history = useHistory();
+    useEffect(() => {
+      if (loading) {
+        // maybe trigger a loading screen
+        return;
+      }
+      if (user) history.replace("/dashboard");
+    }, [user, loading]);
     return (
-        <div>
-            Login to your account
+      <div className="login">
+        <div className="login__container">
+          <input
+            type="text"
+            className="login__textBox"
+            value={email}
+            autoComplete="off"
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="E-mail Address"
+          />
+          <input
+            type="password"
+            className="login__textBox"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Password"
+          />
+          <button
+            className="login__btn"
+            onClick={() => signInWithEmailAndPassword(email, password)}
+          >
+            Login
+          </button>
+          <button className="login__btn login__google" onClick={signInWithGoogle}>
+            Login with Google
+          </button>
+          <div>
+            <Link to="/reset">Forgot Password</Link>
+          </div>
+          <div>
+            Don't have an account? <Link to="/register">Register</Link> now.
+          </div>
         </div>
-    )
+              
+          </div>
+      )
 }
+    
