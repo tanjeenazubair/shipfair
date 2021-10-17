@@ -23,6 +23,8 @@ export const Login = () => {
     return (
       <div className="login">
         <div className="login__container">
+        <h1>Login</h1>
+
           <input
             type="text"
             className="login__textBox"
@@ -44,14 +46,21 @@ export const Login = () => {
           >
             Login
           </button>
-          <button className="login__btn login__google" onClick={signInWithGoogle}>
+          <div className="google-btn" onClick={signInWithGoogle}>
+  <div className="google-icon-wrapper">
+    <img className="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
+  </div>
+  <p className="btn-text">Sign in with Google</p>
+</div>
+
+          {/* <button className="login__btn login__google" onClick={signInWithGoogle}>
             Login with Google
-          </button>
-          <div>
-            <Link to="/reset">Forgot Password</Link>
+          </button> */}
+          <div forget__password>
+            <Link className="forget__password " to="/reset">Forgot Password</Link>
           </div>
           <div>
-            Don't have an account? <Link to="/register">Register</Link> now.
+            Don't have an account? <Link className="forget__password" to="/signup">Register</Link> now.
           </div>
         </div>
               
