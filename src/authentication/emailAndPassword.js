@@ -3,6 +3,7 @@ import { auth, db } from "../libraries/firebase"
 const signInWithEmailAndPassword = async (email, password) => {
     try {
         await auth.signInWithEmailAndPassword(email, password);
+
     } catch (error) {
         console.error(error);
         alert(error.message);
@@ -33,8 +34,9 @@ const sendPasswordResetEmail = async (email) => {
     }
 };
 
-const logOut = () => {
+const logout = () => {
     auth.signOut();
-};
+  };
 
-export { signInWithEmailAndPassword, registerWithEmailAndPassword, sendPasswordResetEmail, logOut };
+
+export { signInWithEmailAndPassword, registerWithEmailAndPassword, sendPasswordResetEmail, logout };

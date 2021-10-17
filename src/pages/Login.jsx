@@ -51,7 +51,7 @@ export const Login = () => {
             <Link to="/reset">Forgot Password</Link>
           </div>
           <div>
-            Don't have an account? <Link to="/register">Register</Link> now.
+            Don't have an account? <Link to="/signup">Register</Link> now.
           </div>
         </div>
               

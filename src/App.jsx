@@ -2,7 +2,7 @@
 import React from "react";
 import "./stylesheets/App.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { Home, Login, Signup } from "./pages";
+import { Home, Login, Reset, Signup } from "./pages";
 import * as ROUTES from "./constants/routes";
 export const App = () => {
   return (
@@ -14,9 +14,13 @@ export const App = () => {
       <Route path={ROUTES.SIGN_UP} exact>
         <Signup />
       </Route>
+      <Route path={ROUTES.RESET} exact>
+        <Reset />
+      </Route>
       <Route path={ROUTES.HOME}>
         <Home />
       </Route>
+     
     </Switch>
 </Router>
   );
