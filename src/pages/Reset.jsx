@@ -32,7 +32,7 @@ export const Reset = () => {
             Send password reset email
           </button>
           <div>
-            Don't have an account? <Link to="/signup">Register</Link> now.
+            Don't have an account? <Link className="forget__password" to="/signup">Register</Link> now.
           </div>
         </div>
       </div>
