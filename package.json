@@ -38,18 +38,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "description": "Provides platform for online shipment service",
-  "main": "index.js",
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/falakamin31/shipfair.git"
-  },
-  "author": "Falak Amin",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/falakamin31/shipfair/issues"
-  },
-  "homepage": "https://github.com/falakamin31/shipfair#readme"
+  }
 }
