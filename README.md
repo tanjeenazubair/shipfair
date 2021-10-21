@@ -66,24 +66,6 @@ When you’re ready to deploy to production, create a minified bundle with `npm 
 - Node
 - ChatEngine/Socket.io
 
-## ⚙️Firebase Configuration
-```javascript 
-const firebaseConfig = {
-    apiKey: "AIzaSyA6SeXkxjOLoM5EDJKXqnursdfg9wMC_mI",
-    authDomain: "shipfair-a6766.firebaseapp.com",
-    projectId: "shipfair-a6766",
-    storageBucket: "shipfair-a6766.appspot.com",
-    messagingSenderId: "888359328107",
-    appId: "1:888359328107:web:7e37eb7ad9144a6869542e",
-    measurementId: "G-VXR1HTXQFX"
-  };
-
-const app = firebase.initializeApp(firebaseConfig);
-const auth = app.auth();
-const db = app.firestore();
-
-export { auth, db };
-```
 ## 👤 User Management System
 - <h2>SignUp:</h2>
 <p>In  ShipFair website, users can easily make their new accounts.They can make their profiles and can perform tasks as agent or shipper.They have to put username ,email, password for their accounts.After Signup they can login to their accounts.Their data will be successfully saved in database.Now they can have access to all the fields of the website.
