@@ -17,12 +17,10 @@ export const App = () => {
       <Route path={ROUTES.RESET} exact>
         <Reset />
       </Route>
-      <Route path={ROUTES.DASHBOARD} exact>
+      <Route path={ROUTES.DASHBOARD} >
         <Dashboard />
       </Route>
-      {/* <Route path={ROUTES.HOME}>
-        <Home />
-      </Route> */}
+     
      
     </Switch>
 </Router>
