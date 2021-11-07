@@ -1,4 +1,5 @@
 import React from "react";
+import "../stylesheets/profile.scss";
 import IconButton from "@mui/material/IconButton";
 import PhotoCamera from "@mui/icons-material/PhotoCamera";
 import { styled } from "@mui/material/styles";
