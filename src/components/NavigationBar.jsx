@@ -1,7 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../stylesheets/NavigationBar.scss';
+import { logout } from "../authentication/emailAndPassword";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useHistory } from 'react-router';
+import { auth } from "../libraries/firebase"
+
+
 
 export const NavigationBar = (props) => {
+    const [user] = useAuthState(auth);
+    const history = useHistory();
+
+    useEffect(() => {
+        if (!user) return history.replace("/login");
+      }, [user]);
     return (
         <div className="navigation_bar">
             <div className="navigation_bar_links">
@@ -14,7 +26,7 @@ export const NavigationBar = (props) => {
                         <li>PACKAGES</li>
                         <li>TRIPS</li>
                         <li>CONTACT</li>
-                        <li>LOG OUT</li>
+                        <li onClick={logout}>LOG OUT</li>
                     </ul>
                 </div>
             </div>

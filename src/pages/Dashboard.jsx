@@ -1,15 +1,39 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { DashboardSideBar, NavigationBar } from "../components";
 import {DashboardContainer} from "../components/DashboardContainer";
 import "../stylesheets/Dashboard.scss";
+import { auth,db } from "../libraries/firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
+
 import { Profile } from "./Profile";
 
+
 export const Dashboard = () => {
+  const [name, setName] = useState("");
+  const [user, loading, error] = useAuthState(auth);
+  useEffect(() => {
+    fetchUserName();
+    
+  }, [user])
+
+  const fetchUserName = async () => {
+    try {
+      const query = await db
+        .collection("users")
+        .where("uid", "==", user?.uid)
+        .get();
+      const data = await query.docs[0].data();
+      setName(data.name);
+    } catch (err) {
+      console.error(err);
+      alert("An error occured while fetching user data");
+    }
+  };
   return (
     <div className="dashboard_page">
       <div className="dashboard_greeting_container">
-        <NavigationBar greeting="Welcome back, Falak Amin"/>
+        <NavigationBar greeting={`Welcome back, ${name}`}/>
 
       </div>
       <DashboardSideBar/>
