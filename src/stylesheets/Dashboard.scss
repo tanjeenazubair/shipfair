@@ -4,9 +4,21 @@
     width: 100vw;
 }
 
-.dashboard_container {
+.dashboard_greeting_container {
     max-width: 1200px;
     background-color: #f2f0e5;
     margin: 5px auto;
     border-radius: 5px;
+}
+.dashboard_container {
+    background-color:green;
+    display: flex;
+    margin: 50px auto;
+    position: absolute;
+    top: 32%;
+    left: 25%;
+    height: 100vh;
+    width: 988px;
+    background-color:#f2f0e5;
+
 }
