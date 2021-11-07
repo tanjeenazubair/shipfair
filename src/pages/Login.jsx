@@ -21,7 +21,7 @@ export const Login = () => {
       // maybe trigger a loading screen
       return;
     }
-    if (user) history.replace("/dashboard");
+    if (user) history.replace("/");
   }, [user, loading]);
   return (
     <div className="login">
