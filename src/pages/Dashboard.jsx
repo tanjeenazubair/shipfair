@@ -1,6 +1,7 @@
 import React from "react";
 import { NavigationBar } from "../components";
 import "../stylesheets/Dashboard.scss";
+import { Profile } from "./Profile";
 
 export const Dashboard = () => {
   return (
@@ -8,6 +9,7 @@ export const Dashboard = () => {
       <div className="dashboard_container">
         <NavigationBar greeting="Welcome back, Falak Amin"/>
       </div>
+      <Profile/>
     </div>
   );
 };
