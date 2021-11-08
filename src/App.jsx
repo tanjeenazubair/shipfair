@@ -2,8 +2,9 @@
 import React from "react";
 import "./stylesheets/App.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { Dashboard, Home, Login, Reset, Signup } from "./pages";
+import { Dashboard, Home, Login, Parcels, Reset, Signup, Trips } from "./pages";
 import * as ROUTES from "./constants/routes";
+import { Profile } from "./pages/Profile";
 export const App = () => {
   return (
     <Router>
@@ -17,6 +18,17 @@ export const App = () => {
       <Route path={ROUTES.RESET} exact>
         <Reset />
       </Route>
+      <Route path={ROUTES.PROFILE} exact >
+        <Profile />
+      </Route>
+      <Route path={ROUTES.TRIPS} exact >
+        <Trips />
+      </Route>
+      <Route path={ROUTES.PARCELS} exact >
+        <Parcels />
+      </Route>
+     
+     
       <Route path={ROUTES.DASHBOARD} >
         <Dashboard />
       </Route>
