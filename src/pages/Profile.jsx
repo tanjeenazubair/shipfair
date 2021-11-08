@@ -8,6 +8,7 @@ import { NavigationBar } from "../components";
 import { auth, db } from "../libraries/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useHistory } from "react-router";
+import { Details } from "../components/Details";
 // import Button from '@mui/material/Button';
 // import "../assets/shipfair-logo.png";
 
@@ -51,7 +52,7 @@ export const Profile = () => {
       <div className="profile-main-container">
         <div className="profile-details-container">
           <div className="profile-image-container">
-            <p className="joining-date">Joined on Sep 2021</p>
+            <p className="joining-date">{`Joined on ${new Date().toLocaleDateString("en-US", {month:"long",day:"numeric"})},2021`}</p>
             <div className="verification">
               <p className="verification-heading">Get Verified</p>
             </div>
@@ -88,7 +89,7 @@ export const Profile = () => {
             </div>
 
             <div className="card-2 about">
-            <p id="about_content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima aut, blanditiis tempore natus dignissimos harum hic</p>
+            <p id="about_content"> <Details /></p>
               <p className="details-heading"></p>
             </div>
             <div className="card-3 questions">
