@@ -2,7 +2,7 @@
   <a href="" rel="noopener">
  <img src="https://static.wixstatic.com/media/e7f15c_2909344e0f57471ca9de10130ea1eb72~mv2.jpg/v1/fill/w_356,h_356,al_c,q_90/e7f15c_2909344e0f57471ca9de10130ea1eb72~mv2.webp" alt="Project logo"></a>
 </p>
-<h2 align="center">Project Title</h2>
+<h2 align="center">Shipfair</h2>
 
 
 <div align="center">
