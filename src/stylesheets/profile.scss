@@ -141,6 +141,7 @@ width: 235px;
 
 }
 .card-2.about {
+    padding: 12px;
     top: 446px;
     width: 656px;
     left: 274px;
@@ -159,6 +160,7 @@ width: 235px;
 
 }
 .card-3.questions {
+    padding: 12px;
     top: 646px;
     width: 656px;
     left: 274px;
@@ -175,6 +177,7 @@ width: 235px;
 
 }
 .card-4.review{
+    padding: 12px;
     top: 855px;
     width: 656px;
     left: 274px;
@@ -209,4 +212,8 @@ width: 235px;
     font-size: 20px;
     font-weight: 500;
     padding: 8px;
+}
+#user_email {
+    font-size: 16px;
+    padding: 12px;
 }

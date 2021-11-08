@@ -17,8 +17,15 @@
     position: absolute;
     top: 32%;
     left: 25%;
-    height: 100vh;
-    width: 988px;
+    min-height: 90vh;
+    min-width: 925px;
+    max-width: 925px;
     background-color:#f2f0e5;
+    padding: 2rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
+}
+.card_container {
+    padding: 15px ;
 }
