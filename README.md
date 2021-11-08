@@ -22,7 +22,6 @@
 - [Problem Statement](#problem_statement)
 - [Idea / Solution](#idea)
 - Getting Start
-- Firebase Configuration
 - Users Management with authentication
 - [Technology Stack](#tech_stack)
 
