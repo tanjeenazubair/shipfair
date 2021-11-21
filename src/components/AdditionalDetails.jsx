@@ -20,7 +20,7 @@ export const AdditionalDetails = () => {
       <p id="additional__content" contentEditable={toggle}>
         {additionalDetails}
       </p>
-      <button onClick={onSaveHandler}>{`edit & save`}</button>
+      <button className="button" onClick={onSaveHandler}>{`edit & save`}</button>
     </>
   );
 };

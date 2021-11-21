@@ -101,7 +101,7 @@ export const Profile = () => {
             <div className="reviews-heading-design"></div>
 
             <div className="card-4 review">
-            <p id="about_content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima aut, blanditiis tempore natus dignissimos harum hic</p>
+            <p id="about_content"></p>
               <p className="details-heading"></p>
             </div>
           </div>

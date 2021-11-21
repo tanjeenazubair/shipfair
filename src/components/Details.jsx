@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { auth, db } from "../libraries/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+import "../stylesheets/Details.scss"
 
 export const Details = () => { 
 
@@ -19,11 +20,11 @@ export const Details = () => {
 
     return (
         <div>
-            <p> Bio: <input onChange={(e)=>setBio(e.target.value)}  value={bio}  readOnly={!toggle}/> </p>
-            <p>Country: <input onChange={(e)=>setCountry(e.target.value)}  value={country} readOnly={!toggle}/></p>
-            <p>Company: <input onChange={(e)=>setCompany(e.target.value)}  value={company} readOnly={!toggle}/></p>
-            <button onClick={(toggle)=> setToggle(toggle)}>edit</button>
-            <button onClick={onSaveHandler}>save</button>
+            <p className="details_items"> Bio: <input className="details_item_input bio" onChange={(e)=>setBio(e.target.value)}  value={bio}  readOnly={!toggle}/> </p>
+            <p className="details_items">Country: <input className="details_item_input country " onChange={(e)=>setCountry(e.target.value)}  value={country} readOnly={!toggle}/></p>
+            <p className="details_items">Company: <input className="details_item_input company" onChange={(e)=>setCompany(e.target.value)}  value={company} readOnly={!toggle}/></p>
+            <button className="button" onClick={(toggle)=> setToggle(toggle)}>edit</button>
+            <button className="button" onClick={onSaveHandler}>save</button>
         </div>
     )
 }

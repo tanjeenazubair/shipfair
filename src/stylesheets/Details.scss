@@ -1,0 +1,77 @@
+.details_items {
+    font-size: 16px;
+
+}
+.details_item_input {
+    // border: none;
+outline: none;
+}
+.details_item_input.bio {
+    width: 85%;
+    height: 20px;
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px solid black;
+
+
+}
+.details_item_input.country {
+    width: 65%;
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px solid black;
+    margin: 2px;
+
+
+}
+.details_item_input.company {
+    width: 55%;
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px solid black;
+    margin: 2px;
+
+
+}
+.button {
+    
+    border-radius: 0.4rem;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 100;
+    outline: none;
+    outline: 0;
+    text-align: center;
+    transform: translateY(0);
+    transition: transform 150ms, box-shadow 150ms;
+    -moz-user-select: none;
+     -ms-user-select: none;
+         user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin: 4px;
+    background:radial-gradient(circle farthest-side at 10% 10%, rgb(242, 106, 97) 0%, rgb(159, 35, 101) 100%);
+    border: none;
+  
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+}
+.button.additional_details {
+    position: relative;
+    top: 42px;
+    height: 26px;
+    width: auto;
+    height: 28px;
+}
+#additional__content {
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-bottom: 2px;
+    height: 34px;
+    padding: 5px;
+}
