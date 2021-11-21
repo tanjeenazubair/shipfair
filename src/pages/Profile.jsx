@@ -9,6 +9,7 @@ import { auth, db } from "../libraries/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useHistory } from "react-router";
 import { Details } from "../components/Details";
+import { AdditionalDetails } from "../components/AdditionalDetails";
 // import Button from '@mui/material/Button';
 // import "../assets/shipfair-logo.png";
 
@@ -17,7 +18,7 @@ export const Profile = () => {
 
   const history = useHistory();
 
-  const [user, loading, error] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
 
   const fetchUserName = async () => {
     try {
@@ -94,7 +95,7 @@ export const Profile = () => {
             </div>
             <div className="card-3 questions">
               <p className="details-heading">Additional Details</p>
-              <p id="about_content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima aut, blanditiis tempore natus dignissimos harum hic</p>
+              <AdditionalDetails />
             </div>
             <div className="reviews-heading">REVIEWS</div>
             <div className="reviews-heading-design"></div>
