@@ -14,11 +14,13 @@ const signInWithGoogle = async () => {
                 name: user.displayName,
                 authProvider: 'google',
                 email: user.email,
+                trips: [],
+                packages: [],
+                about:{bio:'',country:'',company:''}
             });
         }
     } catch (error) {
         console.error(error);
-        alert(error.message);
     }
 };
 
