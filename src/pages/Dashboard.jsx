@@ -11,6 +11,8 @@ import { useHistory } from "react-router";
 
 
 export const Dashboard = () => {
+
+
   const [name, setName] = useState("");
   const history = useHistory();
   const [user, loading, error] = useAuthState(auth);
@@ -22,6 +24,7 @@ export const Dashboard = () => {
     if (!user) history.replace("/login");
     fetchUserName();
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, loading]);
 
  

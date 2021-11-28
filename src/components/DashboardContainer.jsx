@@ -1,25 +1,13 @@
-import React from 'react'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-import {Trips} from "../pages/Trips"
-import { PostCard } from './PostCard';
+import React, { useContext } from "react";
+import { Trips } from "../pages/Trips";
+import { PostCard } from "./PostCard";
+import { FeedContext } from "../context/feed-context";
 
 export const DashboardContainer = () => {
-    return (
-                <div className="dashboard_container">
-                    <PostCard/>
-                    <PostCard/>
-                    <PostCard/>
-                    <PostCard/>
-                    <PostCard/>
-                    <PostCard/>
-      
 
-        
-        </div>
-    )
-}
+  const { items } = useContext(FeedContext);
+
+  return <div className="dashboard_container">
+    {items.map((item) => <PostCard id={item.id} title={item.title} url={item.url} description = {item.description}/>)}
+  </div>;
+};
