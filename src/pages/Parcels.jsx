@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import {
     DashboardContainer,
     DashboardSideBar,
@@ -10,6 +11,7 @@ import { FeedContext } from '../context/feed-context';
 
 export const Parcels = () => {
 
+  const history = useHistory();
   const pkgsCtx = useContext(FeedContext);
   // console.log(pkgsCtx);
   const { packages } = pkgsCtx;
@@ -24,6 +26,9 @@ export const Parcels = () => {
       <DashboardSideBar />
       {/* <DashboardContainer /> */}
       <div className='dashboard_container'>
+        <div>
+          <button className='button' onClick={() => {history.push('/addpackage')}}>Add a Package</button>
+        </div>
         {packages.map(pkg => <PostCard key={pkg.id} id={pkg.id} url={pkg.url} title={pkg.title} description={pkg.description}/>)}
       </div>
     </div>

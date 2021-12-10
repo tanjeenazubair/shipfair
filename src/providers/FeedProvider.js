@@ -73,6 +73,9 @@ const feedReducer = (state, action) => {
 
 const packagesReducer = (state, action) => {
     switch (action.type) {
+        case 'ADD_PACKAGE':
+            let newFeed = [ ...state, action.payload]
+            return newFeed
         case 'REMOVE_PACKAGE':
             let newPackages = state.filter(item => item.id !== action.payload)
             return newPackages;
@@ -108,6 +111,13 @@ export const FeedProvider = (props) => {
             payload: item})
     }
 
+    const addToPackagesHandler = pkg => {
+        dispatchPackageAction({
+            type: 'ADD_PACKAGE',
+            payload: pkg
+        })
+    }
+
     const removeFromFeedHandler = (id) => {
         dispatchFeedAction({
             type: 'REMOVE_FROM_FEED',
@@ -130,7 +140,7 @@ export const FeedProvider = (props) => {
     }
 
     return (
-        <FeedContext.Provider value={{items:feedState, packages: packagesState,trips:tripsState, addItem:addToFeedHandler, removeItem:removeFromFeedHandler, removePackage: removeFromPackagesHandler,removeTrip:removeFromTripsHandler}}>
+        <FeedContext.Provider value={{items:feedState, packages: packagesState,trips:tripsState, addItem:addToFeedHandler, removeItem:removeFromFeedHandler, removePackage: removeFromPackagesHandler,removeTrip:removeFromTripsHandler, addPackage: addToPackagesHandler}}>
         {props.children}       
         </FeedContext.Provider>
     )

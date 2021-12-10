@@ -5,12 +5,16 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Dashboard, Home, Login, Parcels, Reset, Signup, Trips } from "./pages";
 import * as ROUTES from "./constants/routes";
 import { Profile } from "./pages/Profile";
+import AddPackage from "./pages/AddPackage";
 export const App = () => {
   return (
     <Router>
     <Switch>
       <Route path={ROUTES.LOGIN} exact>
         <Login />
+      </Route>
+      <Route path={ROUTES.ADD_PACKAGE} exact>
+        <AddPackage />
       </Route>
       <Route path={ROUTES.SIGN_UP} exact>
         <Signup />
