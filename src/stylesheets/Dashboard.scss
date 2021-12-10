@@ -1,0 +1,31 @@
+.dashboard_page {
+    background-color: #ffffff;
+    height: 100vh;
+    width: 100vw;
+}
+
+.dashboard_greeting_container {
+    max-width: 1200px;
+    background-color: #f2f0e5;
+    margin: 5px auto;
+    border-radius: 5px;
+}
+.dashboard_container {
+    background-color:green;
+    display: flex;
+    margin: 50px auto;
+    position: absolute;
+    top: 32%;
+    left: 25%;
+    min-height: 90vh;
+    min-width: 925px;
+    max-width: 925px;
+    background-color:#f2f0e5;
+    padding: 2rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+.card_container {
+    padding: 15px ;
+}

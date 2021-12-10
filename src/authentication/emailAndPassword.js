@@ -19,10 +19,12 @@ const registerWithEmailAndPassword = async (name, email, password) => {
             name,
             authProvider: 'local',
             email,
+            trip: [],
+            packages: [],
+            about:{bio:'',country:'',company:''}
         });
     } catch (error) {
         console.error(error);
-        alert(error.message);
     }
 };
 const sendPasswordResetEmail = async (email) => {
