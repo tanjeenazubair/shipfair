@@ -6,12 +6,16 @@ import { Dashboard, Home, Login, Parcels, Reset, Signup, Trips } from "./pages";
 import * as ROUTES from "./constants/routes";
 import { Profile } from "./pages/Profile";
 import AddPackage from "./pages/AddPackage";
+import AddTrip from "./pages/AddTrip";
 export const App = () => {
   return (
     <Router>
     <Switch>
       <Route path={ROUTES.LOGIN} exact>
         <Login />
+      </Route>
+      <Route path={ROUTES.ADD_TRIP} exact>
+        <AddTrip />
       </Route>
       <Route path={ROUTES.ADD_PACKAGE} exact>
         <AddPackage />
@@ -31,8 +35,6 @@ export const App = () => {
       <Route path={ROUTES.PARCELS} exact >
         <Parcels />
       </Route>
-     
-     
       <Route path={ROUTES.DASHBOARD} >
         <Dashboard />
       </Route>

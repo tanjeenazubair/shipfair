@@ -88,6 +88,9 @@ const packagesReducer = (state, action) => {
 
 const tripsReducer = (state, action) => {
     switch (action.type) {
+        case 'ADD_TRIP':
+            let newTrips = [ ...state, action.payload]
+            return newTrips
         case "REMOVE_TRIP":
             let newPackages = state.filter(item => item.id !== action.payload)
             return newPackages;
@@ -118,6 +121,13 @@ export const FeedProvider = (props) => {
         })
     }
 
+    const addToTripsHandler = trip => {
+        dispatchTripAction({
+            type: 'ADD_TRIP',
+            payload: trip
+        })
+    }
+
     const removeFromFeedHandler = (id) => {
         dispatchFeedAction({
             type: 'REMOVE_FROM_FEED',
@@ -140,7 +150,7 @@ export const FeedProvider = (props) => {
     }
 
     return (
-        <FeedContext.Provider value={{items:feedState, packages: packagesState,trips:tripsState, addItem:addToFeedHandler, removeItem:removeFromFeedHandler, removePackage: removeFromPackagesHandler,removeTrip:removeFromTripsHandler, addPackage: addToPackagesHandler}}>
+        <FeedContext.Provider value={{items:feedState, packages: packagesState,trips:tripsState, addItem:addToFeedHandler, removeItem:removeFromFeedHandler, removePackage: removeFromPackagesHandler,removeTrip:removeFromTripsHandler, addPackage: addToPackagesHandler, addTrips: addToTripsHandler}}>
         {props.children}       
         </FeedContext.Provider>
     )

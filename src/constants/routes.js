@@ -7,3 +7,4 @@ export const TRIPS = "/trips";
 export const PARCELS = "/parcels"; 
 export const DASHBOARD = "/";
 export const ADD_PACKAGE = "/addpackage";
+export const ADD_TRIP = "/addtrip";
