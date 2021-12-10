@@ -6,11 +6,15 @@ import {
   NavigationBar,
 } from "../components";
 import { PostCard } from "../components/PostCard";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 export const Trips = () => {
    const TripsCtx = useContext(FeedContext);
    const {trips} = TripsCtx;
+   console.log(trips)
   //  console.log(TripsCtx);
+  const history = useHistory();
+
   return (
     <div>
       <div className="dashboard_greeting_container">
@@ -18,6 +22,9 @@ export const Trips = () => {
       </div>
       <DashboardSideBar />
       <div className="dashboard_container">
+      <div>
+          <button className='button' onClick={() => {history.push('/addtrip')}}>Add a Trip</button>
+      </div>
         {trips.map((trip) =>(
           <PostCard key={trip.id} id={trip.id} url={trip.url} title={trip.title} description={trip.description}/>))}
       </div>
