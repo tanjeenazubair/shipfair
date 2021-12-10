@@ -6,16 +6,18 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { FeedContext } from '../context/feed-context';
+import { useLocation } from 'react-router-dom';
 
 export const PostCard = props => {
 
-  const {removeItem} = useContext(FeedContext);
-  console.log(props);
+  const { removeItem, removePackage, removeTrip } = useContext(FeedContext);
+  // console.log(props);
+  const location = useLocation();
+  // console.log(location.pathname);
 
-  const removePackageHandler = () => {
+  const removeItemHandler = () => {
     removeItem(props.id)
   };
-
     return (
         <div className="card_container">
             <Card sx={{ maxWidth: 270 }}>
@@ -38,7 +40,7 @@ export const PostCard = props => {
       <CardActions>
         <Button size="small">{new Date().toLocaleDateString()}</Button>
       </CardActions>
-    <button onClick={removePackageHandler}>Remove</button>
+      {location.pathname === '/parcels' ? <button onClick={() => {removePackage(props.id)}}>Remove</button> : location.pathname === '/trips' ? <button onClick={() => {removeTrip(props.id)}}>Remove</button> :<button onClick={removeItemHandler}>Remove</button>  }
     </Card>
             
         </div>
