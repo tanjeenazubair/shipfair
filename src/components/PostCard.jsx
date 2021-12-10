@@ -40,7 +40,7 @@ export const PostCard = props => {
       <CardActions>
         <Button size="small">{new Date().toLocaleDateString()}</Button>
       </CardActions>
-      {location.pathname === '/parcels' ? <button onClick={() => {removePackage(props.id)}}>Remove</button> : location.pathname === '/trips' ? <button onClick={() => {removeTrip(props.id)}}>Remove</button> :<button onClick={removeItemHandler}>Remove</button>  }
+      {location.pathname === '/parcels' ? <button onClick={() => {removePackage(props.id)}}>Remove</button> : location.pathname === '/trips' ? <button onClick={() => {removeTrip(props.id)}}>Remove</button> :<button className="button" onClick={removeItemHandler}>Remove</button>  }
     </Card>
             
         </div>

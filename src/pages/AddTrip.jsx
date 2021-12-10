@@ -9,6 +9,8 @@ const AddTrip = () => {
   const [description, setDescription] = useState("");
   const [from, setFrom] = useState("Lahore");
   const [to, setTo] = useState("Islamabad");
+  const [DepartureCode, setDepartureCode] = useState("");
+  const [ArrivalCode, setArrivalCode] = useState("");
 
   const pkgCtx = useContext(FeedContext);
 
@@ -28,7 +30,9 @@ const AddTrip = () => {
 
   return (
     <>
-      <NavigationBar />
+      <div className="dashboard_greeting_container">
+        <NavigationBar />
+      </div>
       <div className="dashboard_container trips">
         <form onSubmit={submitHandler}>
           <h1 className="add_trip_heading">Add a Trip</h1>
@@ -63,6 +67,35 @@ const AddTrip = () => {
                   rows="10"
                 ></textarea>
               </div>
+              <div className="airport_departure_code">
+              <label className="trip_input_labels " htmlFor="DepartureCode">
+                Departure Airport Code
+              </label>
+              <input
+                className="add_trip_input code"
+                type="text"
+                id="DepartureCode"
+                autoComplete="off"
+                value={DepartureCode}
+                required
+                onChange={(e) => setDepartureCode(e.target.value)}
+              />
+              </div>
+              <div className="airport_departure_code">
+              <label className="trip_input_labels " htmlFor="ArrivalCode">
+              Arrival Airport Code
+              </label>
+              <input
+                className="add_trip_input code"
+                type="text"
+                id="ArrivalCode"
+                autoComplete="off"
+                value={ArrivalCode}
+                required
+                onChange={(e) => setArrivalCode(e.target.value)}
+              />
+              </div>
+             
             </div>
             <div className="add_trip_options_container">
               <label className="trip_input_labels " htmlFor="from">
@@ -96,7 +129,6 @@ const AddTrip = () => {
                 <option value="Multan">Multan</option>
               </select>
             </div>
-            <div></div>
           </div>
           <div>
             <button className="button add_trip_submit">Submit</button>

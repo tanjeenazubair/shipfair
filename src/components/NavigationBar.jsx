@@ -34,7 +34,9 @@ export const NavigationBar = (props) => {
                         <Link to='/alltrips'>
                         <li>TRIPS</li>
                         </Link>
+                        <Link to='/contact'>
                         <li>CONTACT</li>
+                        </Link>
                         <li onClick={logout}>LOG OUT</li>
                     </ul>
                 </div>

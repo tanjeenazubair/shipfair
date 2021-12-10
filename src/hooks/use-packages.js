@@ -1,26 +1,29 @@
+/* eslint-disable no-undef */
 import { useEffect, useState } from "react";
 import axios from "axios";
 
 const usePackages = () => {
+  
   const [packages, setPackages] = useState([]);
   console.log("usePackages hook calling");
 
   useEffect(() => {
 
 
-    async function updatePkgs (movie) {
-        const response = await fetch("https://shipfair-a6766-default-rtdb.firebaseio.com/pkgs.json", {
-          method: 'POST',
-          body: JSON.stringify(movie),
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        });
-        const data = await response.json();
-        console.log(data);
-      }
+    // async function updatePkgs (movie) {
+    //     const response = await fetch("https://shipfair-a6766-default-rtdb.firebaseio.com/pkgs.json", {
+    //       method: 'POST',
+    //       body: JSON.stringify(movie),
+    //       headers: {
+    //         'Content-Type': 'application/json'
+    //       }
+    //     });
+    //     const data = await response.json();
+    //     console.log('sending data')
+    //     console.log(data);
+    //   }
 
-      updatePkgs(JSON.parse(localStorage.getItem('packages')));
+      // updatePkgs(JSON.parse(localStorage.getItem('packages')));
 
 
 

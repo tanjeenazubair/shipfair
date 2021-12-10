@@ -49,12 +49,9 @@ export const Dashboard = () => {
 
       </div>
       <DashboardSideBar/>
-        {/* <div className="dashboard_container">
-          
-       
-        </div> */}
-      {/* <Profile/> */}
+      
       <DashboardContainer/>
+
     </div>
   );
 };
