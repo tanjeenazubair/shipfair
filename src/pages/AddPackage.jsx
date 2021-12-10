@@ -15,7 +15,8 @@ const AddPackage = () => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        pkgCtx.addPackage({ title, description, from, to });
+        let id = Math.random()*1000000;
+        pkgCtx.addPackage({ id, title, description, from, to });
         setTitle('');
         setDescription('');
         setFrom('Lahore');

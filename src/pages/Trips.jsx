@@ -11,6 +11,7 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 export const Trips = () => {
    const TripsCtx = useContext(FeedContext);
    const {trips} = TripsCtx;
+   console.log(trips)
   //  console.log(TripsCtx);
   const history = useHistory();
 

@@ -15,7 +15,8 @@ const AddTrip = () => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        pkgCtx.addTrips({ title, description, from, to });
+        let id = Math.random()*1000000;
+        pkgCtx.addTrips({ id, title, description, from, to });
         setTitle('');
         setDescription('');
         setFrom('Lahore');
