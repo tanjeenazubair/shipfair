@@ -11,10 +11,10 @@ export const Reset = () => {
     const [email, setEmail] = useState("");
     const [user, loading, error] = useAuthState(auth);
     const history = useHistory();
-    // useEffect(() => {
-    //   if (loading) return;
-    //   if (user) history.replace("/dashboard");
-    // }, [user, loading]);
+    useEffect(() => {
+      if (loading) return;
+      if (user) history.replace("/");
+    }, [user, loading]);
     return (
       <div className="reset">
         <div className="reset__container">

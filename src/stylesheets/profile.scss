@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
+
+.logo {
+    height: 120px;
+    width: 120px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.profile-image-container {
+    // background-color: red;
+    height: 90px;
+    width: 120px;
+
+}
+.joining-date {
+    position:absolute;
+    top:260px;
+    margin-left: 40px;
+}
+.verification {
+    height: 30px;
+    width: 140px;
+    display: flex;
+    position: absolute;
+    left: 30px;
+    top: 310px;
+    padding: 6px;
+    border-radius: 24px;
+
+
+    width: 201px;
+    position: absolute;
+    box-sizing: border-box;
+    z-index: 73;
+    height: 31px;
+    padding: 4px;
+    cursor: pointer;
+    background: radial-gradient(circle farthest-side at 10% 10%, rgb(242, 106, 97) 0%, rgb(159, 35, 101) 100%);
+    border: 2px none rgb(0, 168, 150);
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    letter-spacing: 1px;
+    line-height: 1;
+    border-radius: 40px;
+    box-shadow: rgb(170 ,170 ,170) 2px 2px 4px 0px;
+    transition: border-color 200ms ease 0s, background 200ms ease 0s;
+    display: flex;
+    align-items: center;
+}
+.verification-heading {
+    color: white;
+    margin-left: 23px;
+    font-size: 20px;
+}
+.image-input {
+    background-color: pink;
+    height: 30px;
+    width: 30px;
+}
+.profile-main-container {
+    width: 1136px;
+    position: absolute;
+    background-color:#f2f0e5;
+    padding: 2rem;
+    margin-left: 166px;
+    height: 1120px;
+}
+.username {
+    position: absolute;
+    top: 150px;
+    left: 274px;
+    width: 400px;
+    // background-color:red;
+}
+.username-heading {
+    color: #EF6761;
+    font-size: 32px;
+    font-family: Montserrat;
+
+
+
+}
+.profile-details-container {
+    width: 954px;
+    position: absolute;
+    margin: 61px 100px;
+    box-sizing: border-box;
+    z-index: 2;
+    height: 1100px;
+    top: 0px;
+    background-color: rgba(230, 230, 230, 0.54);
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(171, 171, 171, 0);
+    border-radius: 20px;
+}
+
+.profile-image-container{
+
+height: 233px;
+left: 0px;
+width: 235px;
+}
+.about-heading {
+    font-size: 22px;
+    font-weight: 700;
+    position: relative;
+    left: 274px;
+    top: 360px;
+    
+}
+.reviews-heading {
+    font-size: 22px;
+    font-weight: 700;
+    position: relative;
+    left: 274px;
+    top: 740px;
+
+}
+
+
+.card-1.credentials {
+        // position: relative;
+        top: 246px;
+        width: 656px;
+        left: 274px;
+        position: absolute;
+        box-sizing: border-box;
+        z-index: 30;
+        height: 144px;
+        background-color: rgb(255, 255, 255);
+        border-style: solid;
+        border-width: 1px;
+        border-color: rgba(171, 171, 171, 0);
+        border-radius: 10px;
+        box-shadow: rgb(170 ,170, 170) 1px 1px 2px 0px;
+
+}
+.card-2.about {
+    padding: 12px;
+    top: 446px;
+    width: 656px;
+    left: 274px;
+    position: absolute;
+    box-sizing: border-box;
+    z-index: 30;
+    height: 144px;
+    background-color: rgb(255, 255, 255);
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(171, 171, 171, 0);
+    border-radius: 10px;
+    box-shadow: rgb(170 ,170, 170) 1px 1px 2px 0px;
+   
+
+
+}
+.card-3.questions {
+    padding: 12px;
+    top: 646px;
+    width: 656px;
+    left: 274px;
+    position: absolute;
+    box-sizing: border-box;
+    z-index: 30;
+    height: 144px;
+    background-color: rgb(255, 255, 255);
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(171, 171, 171, 0);
+    border-radius: 10px;
+    box-shadow: rgb(170 ,170, 170) 1px 1px 2px 0px;
+
+}
+.card-4.review{
+    padding: 12px;
+    top: 855px;
+    width: 656px;
+    left: 274px;
+    position: absolute;
+    box-sizing: border-box;
+    z-index: 30;
+    height: 144px;
+    background-color: rgb(255, 255, 255);
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(171, 171, 171, 0);
+    border-radius: 10px;
+    box-shadow: rgb(170 ,170, 170) 1px 1px 2px 0px;
+    
+}
+.reviews-heading-design {
+    position: absolute;
+    box-sizing: border-box;
+    z-index: 46;
+    height: 3px;
+    width: 55px;
+    left: 0px;
+    top: 0px;
+    background: -webkit-linear-gradient(left, rgb(159, 35, 101) 0%, rgb(242, 106, 97) 100%);
+    border-radius: 0px;
+    top: 840px;
+    left: 286px;
+
+
+}
+.details-heading {
+    font-size: 20px;
+    font-weight: 500;
+    padding: 8px;
+}
+#user_email {
+    font-size: 16px;
+    padding: 12px;
+}
+a {
+text-decoration: none;
+color: inherit;
+}
