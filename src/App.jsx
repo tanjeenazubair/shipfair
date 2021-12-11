@@ -15,6 +15,7 @@ import Gettingstartedtrips from "./pages/Forms/gettingstartedtrips";
 import GettingStartedTrip from "./pages/Forms/gettingstartedtrips";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
+import Chat from "./pages/Chat";
 
 export const App = () => {
 
@@ -68,6 +69,9 @@ export const App = () => {
       </Route>
       <Route path={ROUTES.PARCELS} exact >
         <Parcels />
+      </Route>
+      <Route path={ROUTES.CHAT} exact >
+        <Chat/>
       </Route>
       <Route path={ROUTES.DASHBOARD} >
         <Dashboard />

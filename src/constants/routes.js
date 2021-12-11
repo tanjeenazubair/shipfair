@@ -12,3 +12,4 @@ export const ALL_PKGS = "/allpackages";
 export const ALL_TRIPS = "/alltrips";
 export const START_TRIPS = "/gettingstartedtrips";
 export const CONTACT = "/contact";
+export const CHAT = "/chat";
