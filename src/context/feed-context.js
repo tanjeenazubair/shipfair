@@ -10,4 +10,5 @@ export const FeedContext = createContext({
     removePackage: (id) => {},
     addTrips: (newTrip) => {},
     removeTrip: (id) => {},
+    updatePkgs: pkgs => {},
 });
