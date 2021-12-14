@@ -28,8 +28,12 @@ export const NavigationBar = (props) => {
                         <Link to ="/">
                         <li>HOME</li>
                         </Link>
+                        <Link to='/allpackages'>
                         <li>PACKAGES</li>
+                        </Link>
+                        <Link to='/alltrips'>
                         <li>TRIPS</li>
+                        </Link>
                         <li>CONTACT</li>
                         <li onClick={logout}>LOG OUT</li>
                     </ul>
