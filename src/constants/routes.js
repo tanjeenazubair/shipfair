@@ -8,3 +8,6 @@ export const PARCELS = "/parcels";
 export const DASHBOARD = "/";
 export const ADD_PACKAGE = "/addpackage";
 export const ADD_TRIP = "/addtrip";
+export const ALL_PKGS = "/allpackages";
+export const ALL_TRIPS = "/alltrips";
+export const START_TRIPS = "/gettingstartedtrips";
