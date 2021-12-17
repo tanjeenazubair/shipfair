@@ -18,6 +18,7 @@ const feedReducer = (state, action) => {
 };
 
 const packagesReducer = (state, action) => {
+    
     switch (action.type) {
         case 'ADD_PACKAGE':
             let newFeed = [ ...state, action.payload]
@@ -27,6 +28,9 @@ const packagesReducer = (state, action) => {
             let newPackages = state.filter(item => item.id !== action.payload)
             localStorage.setItem('packages', JSON.stringify(newPackages));
             return newPackages;
+        case 'UPDATE_PKGS_FROM_FIREBASE':
+            localStorage.setItem('packages', JSON.stringify(action.payload));
+            return action.payload
             
         default:
             break;
@@ -55,7 +59,9 @@ const tripsReducer = (state, action) => {
 export const FeedProvider = (props) => {
 
     const [packagesState, dispatchPackageAction] = useReducer(packagesReducer, JSON.parse(localStorage.getItem('packages')) || []);
+
     const [tripsState, dispatchTripAction] = useReducer(tripsReducer, JSON.parse(localStorage.getItem('trips')) || []);
+
     const [feedState, dispatchFeedAction] = useReducer(feedReducer, JSON.parse(localStorage.getItem('feed')) || []);
 
     const addToFeedHandler = (item) => {
@@ -120,8 +126,16 @@ export const FeedProvider = (props) => {
         })
     }
 
+    const updatePkgsUsingFirebase = pkgs => {
+        dispatchPackageAction({
+            type: 'UPDATE_PKGS_FROM_FIREBASE',
+            payload: pkgs
+        })
+
+    }
+
     return (
-        <FeedContext.Provider value={{items:feedState, packages: packagesState,trips:tripsState, addItem:addToFeedHandler, removeItem:removeFromFeedHandler, removePackage: removeFromPackagesHandler,removeTrip:removeFromTripsHandler, addPackage: addToPackagesHandler, addTrips: addToTripsHandler}}>
+        <FeedContext.Provider value={{items:feedState, packages: packagesState,trips:tripsState, addItem:addToFeedHandler, removeItem:removeFromFeedHandler, removePackage: removeFromPackagesHandler,removeTrip:removeFromTripsHandler, addPackage: addToPackagesHandler, addTrips: addToTripsHandler, updatePkgs: updatePkgsUsingFirebase}}>
         {props.children}       
         </FeedContext.Provider>
     )

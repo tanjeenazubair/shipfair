@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
+.dashboard_container.trips {
+    width: 1200px;
+    margin-left: -222px;
+
+}
+.add_trip_heading {
+    color: #EF6761;
+    font-size: 32px;
+    font-family: Montserrat;
+}
+.add_trip_container {
+    margin-top: 20px;
+}
+.trip_input_labels {
+    font-size: 18px;
+}
+.trip_input_labels.one {
+    margin-top: 20px;
+}
+.trip_input_labels.two {
+    margin-top: 30px;
+}
+
+.add_trip_input {
+    border: 1px solid rgba(171, 171, 171, 0.41);
+    background-color: #fcfcfc;
+    position: relative;
+    box-sizing: border-box;
+    z-index: 32;
+    height: 40px;
+    border-radius: 5px;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    color: #242934;
+    padding: 0px 10px;
+    top: 40px;
+    width: 314px;
+    left: -32px;
+}
+.add_trip_description {
+
+    border: 1px solid rgba(171, 171, 171, 0.41);
+    background-color: #fcfcfc;
+    position: relative;
+    box-sizing: border-box;
+    z-index: 32;
+    height: 40px;
+    border-radius: 5px;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    color: #242934;
+    padding: 0px 10px;
+    top: 2px;
+    width: 461px;
+    height: 90px;
+    left: 2px;
+    resize: none;
+
+}
+.add_trip_desc_container {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.add_trip_input.select_box {
+    margin-left: -7px;
+}
+.add_trip_options_container {
+    margin-left: 2px;
+}
+.airport_departure_code {
+    display: flex;
+    flex-direction: column;
+    height: 105px;
+}
+.button.add_trip_submit {
+    margin-top: 50px;
+}
+.add_trip_input.code {
+    margin-left: 36px;
+    margin-top: -23px;
+
+}
