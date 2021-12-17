@@ -12,6 +12,10 @@ import AllTrips from "./pages/AllTrips";
 import usePackages from "./hooks/use-packages";
 import { FeedContext } from "./context/feed-context";
 import Gettingstartedtrips from "./pages/Forms/gettingstartedtrips";
+import GettingStartedTrip from "./pages/Forms/gettingstartedtrips";
+import Contact from "./pages/Contact";
+import Footer from "./components/Footer";
+
 export const App = () => {
 
   const { packages } = usePackages();
@@ -23,6 +27,7 @@ export const App = () => {
   }, []);
 
   return (
+    <>
     <Router>
     <Switch>
       <Route path={ROUTES.LOGIN} exact>
@@ -40,11 +45,17 @@ export const App = () => {
       <Route path={ROUTES.ADD_PACKAGE} exact>
         <AddPackage />
       </Route>
+      <Route path={ROUTES.START_TRIPS} exact>
+        <GettingStartedTrip/>
+      </Route>
       <Route path={ROUTES.SIGN_UP} exact>
-        <Gettingstartedtrips />
+        <Signup />
       </Route>
       <Route path={ROUTES.START_TRIPS} exact>
-        <Signup />
+        <Gettingstartedtrips />
+      </Route>
+      <Route path={ROUTES.CONTACT} exact>
+        <Contact />
       </Route>
       <Route path={ROUTES.RESET} exact>
         <Reset />
@@ -64,6 +75,10 @@ export const App = () => {
      
      
     </Switch>
+
 </Router>
+    <Footer/>
+    </>
+
   );
 };

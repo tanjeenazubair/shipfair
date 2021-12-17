@@ -11,15 +11,14 @@
     border-radius: 5px;
 }
 .dashboard_container {
-    background-color:green;
     display: flex;
     margin: 50px auto;
     position: absolute;
-    top: 32%;
-    left: 25%;
-    min-height: 90vh;
-    min-width: 925px;
-    max-width: 925px;
+    top: 35.3%;
+    left: 22.7%;
+    height: 100vh;
+    // min-width: 925px;
+    width: 983px;
     background-color:#f2f0e5;
     padding: 2rem;
     flex-wrap: wrap;
