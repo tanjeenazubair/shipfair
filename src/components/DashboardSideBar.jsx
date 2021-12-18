@@ -29,9 +29,13 @@ export const DashboardSideBar = (props) => {
            < DashboardSideBarItem icon={<FiPackage/>} title={"Parcels"}/>
            </div>
            
-           < DashboardSideBarItem icon={<BiMessageDetail/>} title={"Messages"}/>
-           <div onClick={() => history.push("/profile")}>
+           <div onClick={() => history.push("/chat")}>
 
+           < DashboardSideBarItem icon={<BiMessageDetail/>} title={"Messages"}/>
+           </div>
+           {/* <div onClick={() => history.push("/parcels")}> */}
+
+        <div onClick={() => history.push("/profile")}>
            < DashboardSideBarItem icon={<BiUserCircle/>} title={"Profile"}/>
            </div>
         
