@@ -1,25 +1,72 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { NavigationBar } from "../components";
 import { FeedContext } from "../context/feed-context";
 import "../stylesheets/AddTrip.scss";
+import { auth, db } from "../libraries/firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 const AddTrip = () => {
+  
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [from, setFrom] = useState("Lahore");
   const [to, setTo] = useState("Islamabad");
   const [DepartureCode, setDepartureCode] = useState("");
   const [ArrivalCode, setArrivalCode] = useState("");
+  const [name, setName] = useState('');
 
+  const [user] = useAuthState(auth);
   const pkgCtx = useContext(FeedContext);
 
   const history = useHistory();
+
+
+  const fetchUserName = async () => {
+    try {
+      const query = await db
+        .collection("users")
+        .where("uid", "==", user?.uid)
+        .get();
+      const data = await query.docs[0].data();
+      setName(data.name);
+    } catch (err) {
+      console.error(err);
+      console.log("An error occured while fetching user data");
+    }
+  };
+
+  useEffect(() => {
+    fetchUserName();
+  }, [user]);
+
+  // ! Sending data to Firebase
+  const sendingToFirebaseHandler = async (myObj) => {
+    await fetch('https://shipfair-a6766-default-rtdb.firebaseio.com/trips.json', {
+      method:'POST',
+      body: JSON.stringify({
+        ...myObj
+      })
+    })
+  };
+
+  const sendingAllToFirebaseHandler = async (myObj) => {
+    await fetch('https://shipfair-a6766-default-rtdb.firebaseio.com/all-trips.json', {
+      method:'POST',
+      body: JSON.stringify({
+        ...myObj
+      })
+    })
+  };
 
   const submitHandler = (e) => {
     e.preventDefault();
     let id = Math.random() * 1000000;
     pkgCtx.addTrips({ id, title, description, from, to });
+
+    sendingToFirebaseHandler({ id, title, description, from, to, by:name, contact: user?.email })
+    sendingAllToFirebaseHandler({ id, title, description, from, to, by:name, contact: user?.email })
+
     setTitle("");
     setDescription("");
     setFrom("Lahore");

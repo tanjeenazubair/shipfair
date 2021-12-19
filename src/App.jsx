@@ -16,16 +16,17 @@ import GettingStartedTrip from "./pages/Forms/gettingstartedtrips";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import Chat from "./pages/Chat";
+import useTrips from "./hooks/use-trips";
 
 export const App = () => {
 
   const { packages } = usePackages();
-  const Ctx = useContext(FeedContext);
   console.log(packages);
+  const Ctx = useContext(FeedContext);
+  Ctx.updatePkgs(packages);
+  const { trips } = useTrips();
+  Ctx.updateTrips(trips);
 
-  useEffect(() => {
-    Ctx.updatePkgs(packages);
-  }, []);
 
   return (
     <>
