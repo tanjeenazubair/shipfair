@@ -14,6 +14,6 @@ export const DashboardContainer = () => {
   const items = [ ...packages, ...trips ];
 
   return <div className="dashboard_container">
-    {items.map((item) => <PostCard id={item.id} title={item.title} url={item.url} description = {item.description}/>)}
+    {items.map((item) => <PostCard id={item.id} title={item.title} url={item.url} description = {item.description} contact={item.contact} by={item.by}/>)}
   </div>;
 };

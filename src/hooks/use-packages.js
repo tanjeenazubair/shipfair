@@ -1,11 +1,14 @@
 /* eslint-disable no-undef */
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from '../libraries/firebase';
 
 const usePackages = () => {
   
   const [packages, setPackages] = useState([]);
   console.log("usePackages hook calling");
+  const [user] = useAuthState(auth);
 
   useEffect(() => {
 
@@ -39,11 +42,15 @@ const usePackages = () => {
 
         for (const key in data) {
           console.log(key,data[key])
-          pkgs.push({
-            id: key,
-            title: data[key].title,
-            description: data[key].description,
-          });
+          if (data[key].contact === user?.contact) {
+            pkgs.push({
+              id: key,
+              title: data[key].title,
+              description: data[key].description,
+              contact: data[key].contact,
+               by: data[key].by
+            });
+          }
         }
         console.log(pkgs);
         localStorage.setItem('packages', JSON.stringify(pkgs))
@@ -55,7 +62,7 @@ const usePackages = () => {
     }
     getPackages();
 
-  }, [packages]);
+  }, []);
 
   return { packages };
 };

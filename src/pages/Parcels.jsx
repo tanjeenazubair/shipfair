@@ -31,7 +31,7 @@ export const Parcels = () => {
         <div>
           <button className='button' onClick={() => {history.push('/addpackage')}}>Add a Package</button>
         </div>
-        {packages.map(pkg => <PostCard key={pkg.id} id={pkg.id} url={pkg.url} title={pkg.title} description={pkg.description}/>)}
+        {packages.map(pkg => <PostCard key={pkg.id} id={pkg.id} url={pkg.url} title={pkg.title} description={pkg.description} contact={pkg.contact} by={pkg.by}/>)}
       </div>
     </div>
             

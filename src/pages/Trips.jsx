@@ -30,7 +30,7 @@ export const Trips = () => {
           <button className='button' onClick={() => {history.push(ROUTES.START_TRIPS)}}>Add a Trip</button>
       </div>
         {trips.map((trip) =>(
-          <PostCard key={trip.id} id={trip.id} url={trip.url} title={trip.title} description={trip.description}/>))}
+          <PostCard key={trip.id} id={trip.id} url={trip.url} title={trip.title} description={trip.description} contact={trip.contact} by={trip.by}/>))}
       </div>
       <div>
 
