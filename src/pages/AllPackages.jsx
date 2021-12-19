@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import { PostCard } from '../components/PostCard';
 
 const AllPackages = () => {
 
@@ -22,6 +23,8 @@ const AllPackages = () => {
                   id: key,
                   title: data[key].title,
                   description: data[key].description,
+                  contact: data[key].contact,
+                  by: data[key].by
                 });
               }
               console.log(pkgs);
@@ -40,7 +43,7 @@ const AllPackages = () => {
         <div>
             All the universal packages
             <div>
-                {packages.map((pkg)=>{return <div>{pkg.title}</div>})}
+                {packages.map(pkg => <PostCard key={pkg.id} id={pkg.id} url={pkg.url} title={pkg.title} description={pkg.description} contact={pkg.contact} by={pkg.by}/>)}
             </div>
         </div>
     )
