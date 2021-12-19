@@ -14,10 +14,23 @@ const AddPackage = () => {
 
     const history = useHistory();
 
+    // ! Sending data to Firebase
+    const sendingToFirebaseHandler = async (myObj) => {
+      await fetch('https://shipfair-a6766-default-rtdb.firebaseio.com/packages.json', {
+        method:'POST',
+        body: JSON.stringify({
+          ...myObj
+        })
+      })
+    };
+
     const submitHandler = (e) => {
         e.preventDefault();
         let id = Math.random()*1000000;
         pkgCtx.addPackage({ id, title, description, from, to });
+
+        sendingToFirebaseHandler({ id, title, description, from, to })
+
         setTitle('');
         setDescription('');
         setFrom('Lahore');

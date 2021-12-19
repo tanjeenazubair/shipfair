@@ -19,13 +19,13 @@ import Chat from "./pages/Chat";
 
 export const App = () => {
 
-  const { packages } = usePackages();
-  const Ctx = useContext(FeedContext);
-  console.log(packages);
+  // const { packages } = usePackages();
+  // const Ctx = useContext(FeedContext);
+  // console.log(packages);
 
-  useEffect(() => {
-    Ctx.updatePkgs(packages);
-  }, []);
+  // useEffect(() => {
+  //   Ctx.updatePkgs(packages);
+  // }, []);
 
   return (
     <>
