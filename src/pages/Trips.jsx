@@ -8,14 +8,16 @@ import {
 import { PostCard } from "../components/PostCard";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import * as ROUTES from "../constants/routes"
+import useTrips from "../hooks/use-trips";
 
 export const Trips = () => {
    const TripsCtx = useContext(FeedContext);
-   const {trips} = TripsCtx;
-   console.log(trips)
+  //  const {trips} = TripsCtx;
+  //  console.log(trips)
   //  console.log(TripsCtx);
   const history = useHistory();
-  console.log(ROUTES);
+  // console.log(ROUTES);
+  const { trips } = useTrips();
 
   return (
     <div>

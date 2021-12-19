@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { FeedContext } from '../context/feed-context';
 import { useLocation } from 'react-router-dom';
+import axios from 'axios';
 
 export const PostCard = props => {
 
@@ -14,9 +15,27 @@ export const PostCard = props => {
   // console.log(props);
   const location = useLocation();
   // console.log(location.pathname);
+  console.log(props.id);
 
+  async function deletePost(id) {
+    // await axios.delete(`https://shipfair-a6766-default-rtdb.firebaseio.com/packages/${props.id}`);
+    axios.delete(`https://shipfair-a6766-default-rtdb.firebaseio.com/packages/${id}.json`)
+        .then(() => console.log('deleted successfully'));
+}
+
+async function deleteTrip(id) {
+  // await axios.delete(`https://shipfair-a6766-default-rtdb.firebaseio.com/packages/${props.id}`);
+  axios.delete(`https://shipfair-a6766-default-rtdb.firebaseio.com/trips/${id}.json`)
+      .then(() => console.log('deleted successfully'));
+}
   const removeItemHandler = () => {
+
     removeItem(props.id)
+    removePackage(props.id)
+    removeTrip(props.id)
+    deletePost(props.id)
+    deleteTrip(props.id)
+    
   };
     return (
         <div className="card_container">
@@ -40,7 +59,13 @@ export const PostCard = props => {
       <CardActions>
         <Button size="small">{new Date().toLocaleDateString()}</Button>
       </CardActions>
-      {location.pathname === '/parcels' ? <button onClick={() => {removePackage(props.id)}}>Remove</button> : location.pathname === '/trips' ? <button onClick={() => {removeTrip(props.id)}}>Remove</button> :<button className="button" onClick={removeItemHandler}>Remove</button>  }
+      {location.pathname === '/parcels' ? <button onClick={() => { removePackage(props.id) 
+      deletePost(props.id)
+      deleteTrip(props.id)
+      }}>Remove</button> : location.pathname === '/trips' ? <button onClick={() => { removeTrip(props.id)
+      deletePost(props.id)
+        deleteTrip(props.id)
+      } }>Remove</button> :<button className="button" onClick={removeItemHandler}>Remove</button>  }
     </Card>
             
         </div>

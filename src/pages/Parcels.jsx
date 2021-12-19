@@ -7,6 +7,7 @@ import {
   } from "../components";
 import { PostCard } from '../components/PostCard';
 import { FeedContext } from '../context/feed-context';
+import usePackages from '../hooks/use-packages';
   
 
 export const Parcels = () => {
@@ -14,8 +15,9 @@ export const Parcels = () => {
   const history = useHistory();
   const pkgsCtx = useContext(FeedContext);
   // console.log(pkgsCtx);
-  const { packages } = pkgsCtx;
-  console.log(packages);
+  // const { packages } = pkgsCtx;
+  // console.log(packages);
+  const { packages } = usePackages();
 
     return (
         <div>

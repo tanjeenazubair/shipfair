@@ -2,10 +2,10 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const usePackages = () => {
+const useTrips = () => {
   
-  const [packages, setPackages] = useState([]);
-  console.log("usePackages hook calling");
+  const [trips, setTrips] = useState([]);
+  console.log("useTrips hook calling");
 
   useEffect(() => {
 
@@ -23,15 +23,15 @@ const usePackages = () => {
     //     console.log(data);
     //   }
 
-      // updatePkgs(JSON.parse(localStorage.getItem('packages')));
+      // updatePkgs(JSON.parse(localStorage.getItem('trips')));
 
 
 
 
-    async function getPackages() {
+    async function getTrips() {
       try {
         const response = await axios.get(
-          "https://shipfair-a6766-default-rtdb.firebaseio.com/packages.json"
+          "https://shipfair-a6766-default-rtdb.firebaseio.com/trips.json"
         );
         console.log(response);
         const data = response.data;
@@ -46,18 +46,18 @@ const usePackages = () => {
           });
         }
         console.log(pkgs);
-        localStorage.setItem('packages', JSON.stringify(pkgs))
-        setPackages(pkgs);
+        localStorage.setItem('trips', JSON.stringify(pkgs))
+        setTrips(pkgs);
 
       } catch (error) {
         console.error(error);
       }
     }
-    getPackages();
+    getTrips();
 
-  }, [packages]);
+  }, [trips]);
 
-  return { packages };
+  return { trips };
 };
 
-export default usePackages;
+export default useTrips;
