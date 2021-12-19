@@ -48,6 +48,9 @@ const tripsReducer = (state, action) => {
             let newPackages = state.filter(item => item.id !== action.payload)
             localStorage.setItem('trips', JSON.stringify(newPackages));
             return newPackages;
+        case "UPDATE_TRIPS_FROM_FIREBASE":
+            localStorage.setItem('trips', JSON.stringify(action.payload));
+            return action.payload
     
         default:
             break;
@@ -134,8 +137,16 @@ export const FeedProvider = (props) => {
 
     }
 
+    const updateTripsUsingFirebase = trips => {
+        dispatchPackageAction({
+            type: 'UPDATE_TRIPS_FROM_FIREBASE',
+            payload: trips
+        })
+
+    }
+
     return (
-        <FeedContext.Provider value={{items:feedState, packages: packagesState,trips:tripsState, addItem:addToFeedHandler, removeItem:removeFromFeedHandler, removePackage: removeFromPackagesHandler,removeTrip:removeFromTripsHandler, addPackage: addToPackagesHandler, addTrips: addToTripsHandler, updatePkgs: updatePkgsUsingFirebase}}>
+        <FeedContext.Provider value={{items:feedState, packages: packagesState,trips:tripsState, addItem:addToFeedHandler, removeItem:removeFromFeedHandler, removePackage: removeFromPackagesHandler,removeTrip:removeFromTripsHandler, addPackage: addToPackagesHandler, addTrips: addToTripsHandler, updatePkgs: updatePkgsUsingFirebase, updateTrips: updateTripsUsingFirebase}}>
         {props.children}       
         </FeedContext.Provider>
     )
