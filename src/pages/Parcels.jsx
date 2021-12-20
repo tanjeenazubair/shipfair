@@ -5,9 +5,12 @@ import {
     DashboardSideBar,
     NavigationBar,
   } from "../components";
+import Footer from '../components/Footer';
 import { PostCard } from '../components/PostCard';
 import { FeedContext } from '../context/feed-context';
 import usePackages from '../hooks/use-packages';
+import * as ROUTES from "../constants/routes"
+
   
 
 export const Parcels = () => {
@@ -29,12 +32,12 @@ export const Parcels = () => {
       {/* <DashboardContainer /> */}
       <div className='dashboard_container'>
         <div>
-          <button className='button' onClick={() => {history.push('/addpackage')}}>Add a Package</button>
+          <button className='button' onClick={() => {history.push(ROUTES.START_PKGS)}}>Add a Package</button>
         </div>
         {packages.map(pkg => <PostCard key={pkg.id} id={pkg.id} url={pkg.url} title={pkg.title} description={pkg.description} contact={pkg.contact} by={pkg.by}/>)}
       </div>
     </div>
-            
+           <Footer/> 
         </div>
     )
 }

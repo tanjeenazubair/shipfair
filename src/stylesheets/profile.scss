@@ -92,7 +92,7 @@
     z-index: 2;
     height: 1050px;
     top: 0px;
-    background-color: rgba(83, 80, 80, 0.54);
+    background-color: #cacac8;
     border-style: solid;
     border-width: 1px;
     border-color: rgba(171, 171, 171, 0);
@@ -220,4 +220,7 @@ width: 235px;
 a {
 text-decoration: none;
 color: inherit;
+}
+.footer_container_profile {
+    margin-top: 1163px;
 }

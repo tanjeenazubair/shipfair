@@ -1,6 +1,10 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import { NavigationBar } from '../components';
+import Footer from '../components/Footer';
 import {PostCard} from '../components/PostCard';
+import "../stylesheets/AllPackages.scss"
+
 
 const AllTrips = () => {
 
@@ -42,12 +46,22 @@ const AllTrips = () => {
     }, []);
 
     return (
-        <div>
-            All the Universal trips
-            <div>
+      <>
+
+      <div className="dashboard_greeting_container">
+      <NavigationBar />
+    </div>
+    <div className="all_pkgs_container">
+
+        <div className='heading_allpkgs'>
+            <p >All the universal trips</p> 
+            <div className='cards_container'>
                 {trips.map(trip => <PostCard key={trip.id} id={trip.id} url={trip.url} title={trip.title} description={trip.description} contact={trip.contact} by={trip.by}/>)}
             </div>
+    </div>
         </div>
+            <Footer/>
+        </>
     )
 }
 

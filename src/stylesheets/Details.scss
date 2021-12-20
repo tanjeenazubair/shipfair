@@ -7,30 +7,29 @@
 outline: none;
 }
 .details_item_input.bio {
-    width: 85%;
-    height: 20px;
+        width: 94%;
+    height: 26px;
     padding: 4px;
     border-radius: 4px;
-    border: 1px solid black;
+    border: 2px solid gray;
 
 
 }
 .details_item_input.country {
-    width: 65%;
+    width: 88%;
     padding: 4px;
     border-radius: 4px;
-    border: 1px solid black;
+    border: 2px solid gray;
     margin: 2px;
 
 
 }
 .details_item_input.company {
-    width: 55%;
+    width: 86%;
     padding: 4px;
     border-radius: 4px;
-    border: 1px solid black;
+    border: 2px solid gray;
     margin: 2px;
-
 
 }
 .button {
@@ -70,7 +69,7 @@ outline: none;
     height: 28px;
 }
 #additional__content {
-    border: 1px solid black;
+    border: 2px solid gray;
     border-radius: 4px;
     margin-bottom: 2px;
     height: 34px;

@@ -1,6 +1,9 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import { NavigationBar } from '../components';
+import Footer from '../components/Footer';
 import { PostCard } from '../components/PostCard';
+import "../stylesheets/AllPackages.scss"
 
 const AllPackages = () => {
 
@@ -40,12 +43,22 @@ const AllPackages = () => {
     }, []);
 
     return (
-        <div>
-            All the universal packages
-            <div>
+    <>
+
+      <div className="dashboard_greeting_container">
+      <NavigationBar />
+    </div>
+    <div className="all_pkgs_container">
+
+        <div className='heading_allpkgs'>
+            <p >All the universal packages</p> 
+            <div className='cards_container'>
                 {packages.map(pkg => <PostCard key={pkg.id} id={pkg.id} url={pkg.url} title={pkg.title} description={pkg.description} contact={pkg.contact} by={pkg.by}/>)}
             </div>
+    </div>
         </div>
+            <Footer/>
+        </>
     )
 }
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../stylesheets/Contact.scss";
 import { NavigationBar } from "../components"
+import Footer from "../components/Footer";
 
 const Contact = () => {
     const [name, setName] = useState("");
@@ -68,7 +69,10 @@ const Contact = () => {
 
      <button className="button submit">Submit</button>
     </form>
+
+      
     </div>
+    <Footer/>
     </>
     
   );

@@ -84,12 +84,12 @@ async function deleteAllTrip(id) {
         <Button size="small">{new Date().toLocaleDateString()}</Button>
       </CardActions>
       { props.contact === user?.email && <div>
-      {location.pathname === '/parcels' ? <button onClick={() => { removePackage(props.id) 
+      {location.pathname === '/parcels' ? <button  className="button" onClick={() => { removePackage(props.id) 
       deletePost(props.id)
       deleteAllPost(props.id)
       deleteTrip(props.id)
       deleteAllTrip(props.id)
-      }}>Remove</button> : location.pathname === '/trips' ? <button onClick={() => { removeTrip(props.id)
+      }}>Remove</button> : location.pathname === '/trips' ? <button  className="button" onClick={() => { removeTrip(props.id)
       deletePost(props.id)
       deleteAllPost(props.id)
         deleteTrip(props.id)

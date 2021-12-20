@@ -4,6 +4,7 @@ import { NavigationBar } from '../components';
 import { FeedContext } from '../context/feed-context';
 import { auth, db } from "../libraries/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+import Footer from '../components/Footer';
 
 
 
@@ -130,6 +131,7 @@ const AddPackage = () => {
             <div>
             <button className="button add_trip_submit">Submit</button>           </div>
         </form>
+        <Footer/>
         </div>
         </>
     )
