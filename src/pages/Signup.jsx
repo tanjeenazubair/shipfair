@@ -76,7 +76,7 @@ export const Signup = () => {
           <p className="btn-text">Sign in with Google</p>
         </div>
         <div>
-          <p>Already have an account? <Link className="forget__password"to="/login">Login</Link> now.</p>
+          <p className="signup_text">Already have an account? <Link className="forget__password"to="/login">Login</Link> now.</p>
         </div>
       </div>
     </div>

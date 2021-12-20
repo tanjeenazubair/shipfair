@@ -8,6 +8,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 
 import { Profile } from "./Profile";
 import { useHistory } from "react-router";
+import Footer from "../components/Footer";
 
 
 export const Dashboard = () => {
@@ -51,7 +52,7 @@ export const Dashboard = () => {
       <DashboardSideBar/>
       
       <DashboardContainer/>
-
+    <Footer/>
     </div>
   );
 };

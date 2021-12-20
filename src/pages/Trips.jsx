@@ -9,6 +9,7 @@ import { PostCard } from "../components/PostCard";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import * as ROUTES from "../constants/routes"
 import useTrips from "../hooks/use-trips";
+import Footer from "../components/Footer";
 
 export const Trips = () => {
    const TripsCtx = useContext(FeedContext);
@@ -35,6 +36,7 @@ export const Trips = () => {
       <div>
 
       </div>
+      <Footer/>
 
     </div>
   );

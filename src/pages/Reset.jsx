@@ -6,6 +6,7 @@ import { Link, useHistory } from "react-router-dom";
 import { auth } from '../libraries/firebase';
 import { signInWithEmailAndPassword, signInWithGoogle,sendPasswordResetEmail } from "../authentication";
 import '../stylesheets/Reset.scss';
+import Footer from "../components/Footer";
 
 export const Reset = () => {
     const [email, setEmail] = useState("");

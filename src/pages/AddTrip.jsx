@@ -5,6 +5,7 @@ import { FeedContext } from "../context/feed-context";
 import "../stylesheets/AddTrip.scss";
 import { auth, db } from "../libraries/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+import Footer from "../components/Footer";
 
 const AddTrip = () => {
   
@@ -181,6 +182,7 @@ const AddTrip = () => {
             <button className="button add_trip_submit">Submit</button>
           </div>
         </form>
+        <Footer/>
       </div>
     </>
   );
