@@ -61,11 +61,11 @@ const AddPackage = () => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        let id = Math.random()*1000000;
-        pkgCtx.addPackage({ id, title, description, from, to });
+        // let id = Math.random()*1000000;
+        pkgCtx.addPackage({ title, description, from, to });
 
-        sendingToFirebaseHandler({ id, title, description, from, to, by: name, contact: user?.email })
-        sendingAllToFirebaseHandler({ id, title, description, from, to, by: name, contact: user?.email })
+        sendingToFirebaseHandler({ title, description, from, to, by: name, contact: user?.email })
+        sendingAllToFirebaseHandler({ title, description, from, to, by: name, contact: user?.email })
 
         setTitle('');
         setDescription('');
