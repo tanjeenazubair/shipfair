@@ -40,19 +40,23 @@ Another problem is the security and delay in their packages and luggage.
 security and also will help to take and bring packages on time. Shippers and travelers can contact, it will save 
 them from security hassles.
 ## 💡 Getting Start
-Creating react app
+To get started  you can simply clone this `shipfair` repository and install the dependencies.
+
+Clone the `shipfair` repository using git:
 
 ```sh
-npx create-react-app my-app
-cd my-app
-npm start
+git clone https://github.com/amna-jamshaid/shipfair.git
 ```
 
-If you've previously installed `create-react-app` globally via `npm install -g create-react-app`, we recommend you uninstall the package using `npm uninstall -g create-react-app` or `yarn global remove create-react-app` to ensure that npx always uses the latest version.
+Install dependencies with this command:
+```bash
+npm install
+```
 
-
-Then open [http://localhost:3000/](http://localhost:3000/) to see your app.<br>
-When you’re ready to deploy to production, create a minified bundle with `npm run build`.
+Run the application with this command:
+```bash
+npm start
+```
 
 <p align='center'>
 <img src='https://cdn.jsdelivr.net/gh/facebook/create-react-app@27b42ac7efa018f2541153ab30d63180f5fa39e0/screencast.svg' width='600' alt='npm start'>
