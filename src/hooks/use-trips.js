@@ -64,7 +64,7 @@ const useTrips = () => {
     }
     getTrips();
 
-  }, []);
+  }, [trips]);
 
   return { trips };
 };

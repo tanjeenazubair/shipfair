@@ -17,12 +17,14 @@ const AddPackage = () => {
     const [name, setName] = useState('');
 
     const pkgCtx = useContext(FeedContext);
+    const cities = ["Lahore" , "Karachi" , "Quetta", "Islamabad"]
 
     const history = useHistory();
   const [user] = useAuthState(auth);
 
 
     const fetchUserName = async () => {
+      
     try {
       const query = await db
         .collection("users")
@@ -61,11 +63,11 @@ const AddPackage = () => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        let id = Math.random()*1000000;
-        pkgCtx.addPackage({ id, title, description, from, to });
+        // let id = Math.random()*1000000;
+        pkgCtx.addPackage({ title, description, from, to });
 
-        sendingToFirebaseHandler({ id, title, description, from, to, by: name, contact: user?.email })
-        sendingAllToFirebaseHandler({ id, title, description, from, to, by: name, contact: user?.email })
+        sendingToFirebaseHandler({ title, description, from, to, by: name, contact: user?.email })
+        sendingAllToFirebaseHandler({ title, description, from, to, by: name, contact: user?.email })
 
         setTitle('');
         setDescription('');
@@ -84,13 +86,13 @@ const AddPackage = () => {
             <h1 className="add_trip_heading">Add a Package</h1>
             <div>
                 <label className="trip_input_labels "htmlFor="title">Title</label>
-                <input  className="add_trip_input" type="text" id='title' autoComplete='off' value={title} onChange={e => setTitle(e.target.value)} />
+                <input  className="add_trip_input" type="text" id='title' required autoComplete='off' value={title} onChange={e => setTitle(e.target.value)} />
             </div>
             <div>
                 <div className="add_trip_desc_container">
 
                 <label className="trip_input_labels one" htmlFor="description">Description</label >
-                <textarea className="add_trip_description" autoComplete='off' id="description" value={description} onChange={e => setDescription(e.target.value)} cols="30" rows="10"></textarea>
+                <textarea className="add_trip_description" autoComplete='off' id="description" value={description} onChange={e => setDescription(e.target.value)} cols="30" rows="10" required></textarea>
                 </div>
             </div>
             <div>
@@ -104,11 +106,13 @@ const AddPackage = () => {
                 value={from}
                 id="from"
                 onChange={(e) => setFrom(e.target.value)}
-              >
-                <option value="Lahore">Lahore</option>
+              > {
+                cities.map((city)=> <option value={city}>{city}</option>)
+              }
+                {/* <option value="Lahore">Lahore</option>
                 <option value="Karachi">Karachi</option>
                 <option value="Islamabad">Islamabad</option>
-                <option value="Multan">Multan</option>
+                <option value="Multan">Multan</option> */}
               </select>
               <label className="trip_input_labels " htmlFor="to">
                 To
@@ -120,10 +124,11 @@ const AddPackage = () => {
                 id="to"
                 onChange={(e) => setTo(e.target.value)}
               >
-                <option value="Lahore">Lahore</option>
+                {cities.filter((city) =>(city!=from)).map( (city)=><option value="{city}">{city}</option>)}
+                {/* <option value="Lahore">Lahore</option>
                 <option value="Karachi">Karachi</option>
                 <option value="Islamabad">Islamabad</option>
-                <option value="Multan">Multan</option>
+                <option value="Multan">Multan</option> */}
               </select>
             </div>
                

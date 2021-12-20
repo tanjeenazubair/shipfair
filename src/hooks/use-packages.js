@@ -8,28 +8,10 @@ const usePackages = () => {
   
   const [packages, setPackages] = useState([]);
   console.log("usePackages hook calling");
+
   const [user] = useAuthState(auth);
 
   useEffect(() => {
-
-
-    // async function updatePkgs (movie) {
-    //     const response = await fetch("https://shipfair-a6766-default-rtdb.firebaseio.com/pkgs.json", {
-    //       method: 'POST',
-    //       body: JSON.stringify(movie),
-    //       headers: {
-    //         'Content-Type': 'application/json'
-    //       }
-    //     });
-    //     const data = await response.json();
-    //     console.log('sending data')
-    //     console.log(data);
-    //   }
-
-      // updatePkgs(JSON.parse(localStorage.getItem('packages')));
-
-
-
 
     async function getPackages() {
       try {
@@ -42,7 +24,7 @@ const usePackages = () => {
 
         for (const key in data) {
           console.log(key,data[key])
-          if (data[key].contact === user?.contact) {
+          if (data[key].contact === user?.email) {
             pkgs.push({
               id: key,
               title: data[key].title,
@@ -62,7 +44,7 @@ const usePackages = () => {
     }
     getPackages();
 
-  }, []);
+  }, [packages]);
 
   return { packages };
 };

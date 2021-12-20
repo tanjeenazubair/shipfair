@@ -21,6 +21,7 @@ export const Parcels = () => {
   // const { packages } = pkgsCtx;
   // console.log(packages);
   const { packages } = usePackages();
+  console.log(packages);
 
     return (
         <div>

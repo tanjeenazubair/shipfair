@@ -56,7 +56,7 @@ const Chat = () => {
     }
     
     function SignOut() {
-      return auth.currentUser && (
+      return false && (
         <button className="button" onClick={() => auth.signOut()}>Sign Out</button>
         
       )

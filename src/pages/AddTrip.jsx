@@ -19,6 +19,7 @@ const AddTrip = () => {
 
   const [user] = useAuthState(auth);
   const pkgCtx = useContext(FeedContext);
+  const cities = ['Lahore', 'Islamabad', 'Karachi', 'Quetta'];
 
   const history = useHistory();
 
@@ -97,6 +98,7 @@ const AddTrip = () => {
                 id="title"
                 autoComplete="off"
                 value={title}
+                required
                 onChange={(e) => setTitle(e.target.value)}
               />
             </div>
@@ -113,6 +115,7 @@ const AddTrip = () => {
                   onChange={(e) => setDescription(e.target.value)}
                   cols="30"
                   rows="10"
+                  required
                 ></textarea>
               </div>
               <div className="airport_departure_code">
@@ -156,10 +159,13 @@ const AddTrip = () => {
                 id="from"
                 onChange={(e) => setFrom(e.target.value)}
               >
-                <option value="Lahore">Lahore</option>
-                <option value="Karachi">Karachi</option>
-                <option value="Islamabad">Islamabad</option>
-                <option value="Multan">Multan</option>
+                {
+                  cities.map(city => <option value={city}>{city}</option>)
+                }
+                {/* // <option value="Lahore">Lahore</option>
+                // <option value="Karachi">Karachi</option>
+                // <option value="Islamabad">Islamabad</option>
+                // <option value="Multan">Multan</option> */}
               </select>
               <label className="trip_input_labels " htmlFor="to">
                 To
@@ -171,10 +177,13 @@ const AddTrip = () => {
                 id="to"
                 onChange={(e) => setTo(e.target.value)}
               >
-                <option value="Lahore">Lahore</option>
+                {
+                  cities.filter(city => city!==from).map(city => <option value={city}>{city}</option>)
+                }
+                {/* <option value="Lahore">Lahore</option>
                 <option value="Karachi">Karachi</option>
                 <option value="Islamabad">Islamabad</option>
-                <option value="Multan">Multan</option>
+                <option value="Multan">Multan</option> */}
               </select>
             </div>
           </div>
