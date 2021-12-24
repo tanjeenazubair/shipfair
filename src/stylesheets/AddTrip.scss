@@ -1,12 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+@import url("http://cdn.syncfusion.com/ej2/material.css");
 
 .dashboard_container.trips {
     width: 1200px;
     margin-left: -222px;
+    height: 1000px;
+    background-color: cadetblue;
 
 }
 .add_trip_heading {
-    color: #EF6761;
+  //  color: #EF6761;
+    color: rebeccapurple;
     font-size: 32px;
     font-family: Montserrat;
 }
@@ -85,3 +89,11 @@
     margin-top: -23px;
 
 }
+.ul{
+    // width: 240px;
+     //display: block;
+     margin-left: 99%;
+     //padding: 10%
+     margin-bottom: 1%;
+     margin-top: 5%    
+ }

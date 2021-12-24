@@ -5,6 +5,8 @@ import { FeedContext } from '../context/feed-context';
 import { auth, db } from "../libraries/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import Footer from '../components/Footer';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css'
 
 
 
@@ -15,6 +17,8 @@ const AddPackage = () => {
     const [from, setFrom] = useState('Lahore');
     const [to, setTo] = useState('Islamabad');
     const [name, setName] = useState('');
+    const [selectedDate,setSelectedDate]=useState(null);
+    const minTime: date = new Date("01/12/2021 07:00 AM ")
 
     const pkgCtx = useContext(FeedContext);
     const cities = ["Lahore" , "Karachi" , "Quetta", "Islamabad"]
@@ -114,6 +118,16 @@ const AddPackage = () => {
                 <option value="Islamabad">Islamabad</option>
                 <option value="Multan">Multan</option> */}
               </select>
+              <div className="ul">                 
+                <label >Pick Desired Date</label>                                 
+                <DatePicker selected={selectedDate} onChange={date => setSelectedDate(date)}
+                showTimeSelect
+                dateFormat="Pp"          
+                dateFormat="dd/MM/yyyy hh:mm a"
+                timeFormat="hh:mm a"
+                timeIntervals={30}             
+                 />                
+             </div>
               <label className="trip_input_labels " htmlFor="to">
                 To
               </label>

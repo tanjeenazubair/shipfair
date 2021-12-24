@@ -1,12 +1,15 @@
 .dashboard_page {
-    background-color: #ffffff;
-    height: 100vh;
+  //  background-color: #ffffff;
+    background-color: cadetblue;
+    height: 143vh;
     width: 100vw;
 }
 
 .dashboard_greeting_container {
     max-width: 1200px;
-    background-color: #f2f0e5;
+  //  background-color: #f2f0e5;
+    background-color: aquamarine;
+
     margin: 5px auto;
     border-radius: 5px;
 }
@@ -19,7 +22,8 @@
     height: 100vh;
     // min-width: 925px;
     width: 983px;
-    background-color:#f2f0e5;
+   // background-color:#f2f0e5;
+    background-color: cadetblue;
     padding: 2rem;
     flex-wrap: wrap;
     justify-content: space-between;
